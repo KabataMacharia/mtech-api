@@ -15,8 +15,6 @@ class MtechApi
     protected $apiKey;
 
     protected $client;
-    protected $contentClient;
-    protected $voiceClient;
     protected $tokenClient;
     public $baseUrl;
 
@@ -48,8 +46,7 @@ class MtechApi
 
     public function token()
     {
-        $content = new Content($this->tokenClient, $this->username, $this->apiKey);
-        return new Token($this->tokenClient, $this->username, $this->apiKey, $content);
+        return new Token($this->tokenClient, $this->username, $this->apiKey);
     }
 
     public function sms()
