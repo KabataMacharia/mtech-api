@@ -1,5 +1,5 @@
 {
-    "name": "mtech/sms-api",
+    "name": "kabatamtech/sms-api",
     "description": "Mtech sms api package",
     "keywords": ["mtech", "sms", "text message", "api"],
     "type": "library",
