@@ -1,6 +1,6 @@
 <?php
 
-namespace Mtech\Api;
+namespace KabataMtech\Api;
 
 class Service
 {

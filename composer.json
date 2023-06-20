@@ -1,7 +1,7 @@
 {
     "name": "kabatamtech/sms-api",
     "description": "Mtech sms api package",
-    "keywords": ["mtech", "sms", "text message", "api"],
+    "keywords": ["kabatamtech", "sms", "text message", "api"],
     "type": "library",
     "require": {
         "php": ">=7.1",
