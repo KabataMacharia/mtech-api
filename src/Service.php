@@ -21,7 +21,17 @@ class Service
     {
         return [
             'status' => 'error',
+            'errorCode' => $data->getStatusCode(),
             'data' => $data
+        ];
+    }
+
+    protected static function exception($data)
+    {
+        return [
+            'status' => 'error',
+            'errorCode' => $data->getResponse()->getStatusCode(),
+            'data' => $data->getResponse()->getBody()->getContents()
         ];
     }
 
@@ -29,6 +39,7 @@ class Service
     {
         return [
             'status' => 'success',
+            'statusCode' => $data->getStatusCode(),
             'data' => json_decode($data->getBody()->getContents())
         ];
     }

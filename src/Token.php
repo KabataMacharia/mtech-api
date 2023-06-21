@@ -2,6 +2,8 @@
 
 namespace KabataMtech\Api;
 
+use GuzzleHttp\Exception\RequestException;
+
 class Token extends Service
 {
     public function __construct($client, $username, $apiKey)
@@ -15,7 +17,11 @@ class Token extends Service
             "username" => $this->username,
             "password" => $this->apiKey
         ];
-        $response = $this->client->post("auth/token",$data);
-        return $this->success($response);
+        $response = $this->client->post("auth/token", ['json' => $data]);
+        try {
+            return $this->success($response);
+        } catch (RequestException $e) {
+            return $this->exception($e);
+        }
     }
 }
