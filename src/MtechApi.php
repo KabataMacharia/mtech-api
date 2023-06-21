@@ -17,6 +17,7 @@ class MtechApi
     {
         $baseDomain = self::BASE_DOMAIN;
         $this->baseUrl = "https://api.$baseDomain/index.php";
+        echo $this->baseUrl;
         $this->username = $username;
         $this->apiKey = $apiKey;
 
