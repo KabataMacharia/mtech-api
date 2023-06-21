@@ -7,23 +7,18 @@ use GuzzleHttp\Client;
 class MtechApi
 {
 
-
     const BASE_DOMAIN = "mtechcomm.co.ke";
-    const BASE_SANDBOX_DOMAIN = "sandbox." . self::BASE_DOMAIN;
-
     protected $username;
     protected $apiKey;
-
     protected $client;
     protected $tokenClient;
     public $baseUrl;
-
     public function __construct($username, $apiKey)
     {
-        $this->baseUrl = "https://api." . self::BASE_SANDBOX_DOMAIN . "/index.php";
+        $baseDomain = self::BASE_DOMAIN;
+        $this->baseUrl = "https://api.$baseDomain/index.php";
         $this->username = $username;
         $this->apiKey = $apiKey;
-
 
         $this->client = new Client([
             'base_uri' => $this->baseUrl,

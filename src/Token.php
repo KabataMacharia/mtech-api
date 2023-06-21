@@ -15,7 +15,7 @@ class Token extends Service
             "username" => $this->username,
             "password" => $this->apiKey
         ];
-        $response = $this->client->post("auth/token", ['body' => $data]);
+        $response = $this->client->post("auth/token",$data);
         return $this->success($response);
     }
 }
